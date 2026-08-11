@@ -51,11 +51,15 @@ code {
 .skip-link:focus { top: 1rem; }
 
 .site-header {
-  position: sticky; top: 0; z-index: 50; height: 76px;
-  display: flex; align-items: center; justify-content: space-between;
-  max-width: calc(var(--max) + 48px); margin: 0 auto; padding: 0 24px;
+  position: sticky; top: 0; z-index: 50; width: 100%;
   background: color-mix(in srgb, var(--bg) 84%, transparent);
+  border-bottom: 1px solid var(--line);
   backdrop-filter: blur(18px);
+}
+.header-inner {
+  width: min(calc(var(--max) + 48px), 100%);
+  min-height: 76px; margin: 0 auto; padding: 0 24px;
+  display: flex; align-items: center; justify-content: space-between;
 }
 .brand { display: inline-flex; align-items: center; gap: .68rem; font-family: "Space Grotesk"; font-weight: 700; letter-spacing: -.03em; }
 .brand-mark {
@@ -200,11 +204,16 @@ input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px color-mix(in sr
 .cta-section h2 { max-width: 850px; font-size: clamp(2rem, 4vw, 3.7rem); }
 
 .footer {
-  min-height: 150px; width: min(var(--max), calc(100% - 48px)); margin: 0 auto;
-  border-top: 1px solid var(--line); display: grid; grid-template-columns: 1fr 2fr 1fr;
-  align-items: center; gap: 20px; color: var(--muted); font-size: .82rem;
+  width: 100%; border-top: 1px solid var(--line);
+  background: color-mix(in srgb, var(--bg-2) 72%, var(--bg));
+  color: var(--muted); font-size: .82rem;
 }
-.footer p:last-child { text-align: right; }
+.footer-inner {
+  min-height: 150px; width: min(var(--max), calc(100% - 48px)); margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 2fr 1fr;
+  align-items: center; gap: 20px;
+}
+.footer-inner p:last-child { text-align: right; }
 
 dialog {
   width: min(760px, calc(100% - 32px)); max-height: 86vh; overflow-y: auto;
@@ -231,7 +240,7 @@ dialog::backdrop { background: rgba(3,6,14,.72); backdrop-filter: blur(8px); }
 }
 @media (max-width: 640px) {
   .section { width: min(100% - 30px, var(--max)); padding: 72px 0; }
-  .site-header { padding: 0 15px; }
+  .header-inner { padding: 0 15px; }
   .header-actions .button { display: none; }
   h1 { font-size: clamp(3rem, 15vw, 4.3rem); }
   .hero { min-height: auto; padding-top: 30px; }
@@ -245,6 +254,6 @@ dialog::backdrop { background: rgba(3,6,14,.72); backdrop-filter: blur(8px); }
   .practice-card { padding: 24px 18px; }
   .practice-question { margin: 36px 0 22px; }
   .cta-section { width: calc(100% - 30px); padding: 36px 24px; flex-direction: column; align-items: flex-start; }
-  .footer { grid-template-columns: 1fr; padding: 35px 0; }
-  .footer p:last-child { text-align: left; }
+  .footer-inner { grid-template-columns: 1fr; padding: 35px 0; }
+  .footer-inner p:last-child { text-align: left; }
 }
