@@ -89,6 +89,32 @@ dialog{width:min(760px,calc(100% - 32px));max-height:86vh;overflow-y:auto;border
     outline:none !important;
   }
 
+  .dialog-close {
+  position: sticky;
+  top: 0;
+  float: right;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  background: var(--panel2);
+  color: var(--text);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.dialog-close:focus,
+.dialog-close:focus-visible,
+.dialog-close:active {
+  border: none;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
 
   /* =========================================
      FIX 2: inline equation boxes
