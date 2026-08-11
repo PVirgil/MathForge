@@ -27,52 +27,47 @@ h1,h2,h3{line-height:1.06;letter-spacing:-.045em;margin:0;font-weight:800}h1{fon
 dialog{width:min(760px,calc(100% - 32px));max-height:86vh;overflow-y:auto;border:1px solid var(--line);border-radius:24px;padding:34px;background:var(--panel);color:var(--text);box-shadow:var(--shadow)}dialog::backdrop{background:rgba(3,6,14,.72);backdrop-filter:blur(8px)}.dialog-close{position:sticky;top:0;float:right;width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--panel2);color:var(--text);cursor:pointer}.lesson-kicker{color:var(--accent);font-size:.75rem;text-transform:uppercase;letter-spacing:.14em;font-weight:800}#lessonContent h2{font-size:2.7rem;margin:.4rem 0 1rem}#lessonContent h3{margin:2rem 0 .7rem}#lessonContent p,#lessonContent li{color:var(--muted)}.lesson-example{padding:18px;border-left:3px solid var(--accent);background:var(--bg2);border-radius:0 12px 12px 0}.lesson-check{margin-top:18px;padding:16px;border-radius:12px;background:var(--panel2);border:1px solid var(--line)}
 @media(max-width:980px){.nav{display:none}.hero{grid-template-columns:1fr;gap:50px}.hero-panel{max-width:650px}.topic-grid,.dashboard-grid{grid-template-columns:repeat(2,1fr)}.graph-layout,.practice-layout{grid-template-columns:1fr}.score-card{min-height:260px}}
 @media(max-width:640px){.header-inner,.section,.subject-strip-inner,.footer-inner{width:min(100% - 30px,var(--max))}.header-actions .button{display:none}.section{padding:72px 0}.hero{min-height:auto;padding-top:30px}.hero-stats{gap:1.2rem}.section-heading{grid-template-columns:1fr;gap:18px}.topic-grid,.dashboard-grid{grid-template-columns:1fr}.tool-panel{padding:28px 16px}.input-row,.coefficient-row{grid-template-columns:1fr}.practice-card{padding:24px 18px}.cta-section{width:calc(100% - 30px);padding:36px 24px;flex-direction:column;align-items:flex-start}.footer-inner{grid-template-columns:1fr;padding:35px 0}.footer-inner p:last-child{text-align:left}}
-/* ================================
-   Mobile fixes
-   ================================ */
-@media (max-width: 768px) {
-
-  /* Remove the blue/tap circle around card X buttons */
-  .close-btn,
-  .card-close,
-  button[aria-label="Close"],
-  button[aria-label="close"] {
-    -webkit-tap-highlight-color: transparent;
-    outline: none;
-    box-shadow: none;
+@media(max-width:640px){
+  .header-inner,.section,.subject-strip-inner,.footer-inner{
+    width:min(100% - 30px,var(--max))
   }
 
-  .close-btn:focus,
-  .close-btn:active,
-  .card-close:focus,
-  .card-close:active,
-  button[aria-label="Close"]:focus,
-  button[aria-label="Close"]:active,
-  button[aria-label="close"]:focus,
-  button[aria-label="close"]:active {
-    outline: none;
-    box-shadow: none;
+  .header-actions .button{display:none}
+  .section{padding:72px 0}
+  .hero{min-height:auto;padding-top:30px}
+  .hero-stats{gap:1.2rem}
+  .section-heading{grid-template-columns:1fr;gap:18px}
+  .topic-grid,.dashboard-grid{grid-template-columns:1fr}
+  .tool-panel{padding:28px 16px}
+  .input-row,.coefficient-row{grid-template-columns:1fr}
+  .practice-card{padding:24px 18px}
+  .cta-section{
+    width:calc(100% - 30px);
+    padding:36px 24px;
+    flex-direction:column;
+    align-items:flex-start
+  }
+  .footer-inner{grid-template-columns:1fr;padding:35px 0}
+  .footer-inner p:last-child{text-align:left}
+
+
+  /* MOBILE FIX: lesson close X */
+  .dialog-close{
+    background:transparent;
+    border:0;
+    border-radius:0;
+    box-shadow:none;
+    outline:none;
+    -webkit-tap-highlight-color:transparent;
+    appearance:none;
   }
 
 
-  /* Treat boxed equations as one indivisible "word".
-     If it doesn't fit, the WHOLE equation moves to the next line. */
-  .equation,
-  .equation-box,
-  .math-example,
-  code {
-    display: inline-block;
-    white-space: nowrap;
-    max-width: 100%;
-    vertical-align: baseline;
-  }
-
-  /* Allow the surrounding sentence to wrap normally */
-  .example,
-  .worked-example,
-  .lesson-content,
-  .lesson-card p {
-    overflow-wrap: normal;
-    word-break: normal;
+  /* MOBILE FIX: don't split boxed equations */
+  code{
+    display:inline-block;
+    white-space:nowrap;
+    max-width:100%;
+    vertical-align:baseline;
   }
 }
