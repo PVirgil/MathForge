@@ -43,7 +43,27 @@ dialog{width:min(760px,calc(100% - 32px));max-height:86vh;overflow-y:auto;border
 .tool-panel>p code{display:inline-block;white-space:nowrap}
 input,textarea{caret-color:var(--text)}
 .header-inner,.section,.subject-strip-inner,.footer-inner{width:min(100% - 30px,var(--max))}.header-actions .button{display:none}.section{padding:72px 0}.hero{min-height:auto;padding-top:30px}.hero-stats{gap:1.2rem}.section-heading{grid-template-columns:1fr;gap:18px}.topic-grid,.dashboard-grid{grid-template-columns:1fr}.tool-panel{padding:28px 16px}.input-row,.coefficient-row{grid-template-columns:1fr}.practice-card{padding:24px 18px}.cta-section{width:calc(100% - 30px);padding:36px 24px;flex-direction:column;align-items:flex-start}.footer-inner{grid-template-columns:1fr;padding:35px 0}.footer-inner p:last-child{text-align:left}}
+@media (max-width: 1300px) {
+  .dialog-close {
+    -webkit-appearance: none;
+    appearance: none;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+    box-shadow: none;
+  }
 
+  .dialog-close:focus,
+  .dialog-close:focus-visible,
+  .dialog-close:active {
+    outline: none;
+    box-shadow: none;
+  }
+
+  input,
+  textarea {
+    caret-color: var(--text);
+  }
+}
 </style>
 </head>
 <body>
