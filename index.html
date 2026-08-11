@@ -9,7 +9,7 @@
   <meta property="og:description" content="Interactive lessons, graphing, solvers, practice, and guided math help." />
   <meta property="og:type" content="website" />
   <title>MathForge — Learn. Solve. Master.</title>
-  <link rel="icon" href="favicon333.svg" type="image/svg+xml" />
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="/assets/styles.css" />
   <script>
     window.MathJax = {
@@ -25,20 +25,22 @@
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header">
-    <a class="brand" href="#home" aria-label="MathForge home">
-      <span class="brand-mark">∑</span>
-      <span>MathForge</span>
-    </a>
-    <nav class="nav" aria-label="Primary">
-      <a href="#learn">Learn</a>
-      <a href="#practice">Practice</a>
-      <a href="#solve">Solve</a>
-      <a href="#graph">Graph</a>
-      <a href="#progress">Progress</a>
-    </nav>
-    <div class="header-actions">
-      <button class="icon-button" id="themeToggle" type="button" aria-label="Toggle light and dark theme">◐</button>
-      <a class="button button-small" href="#practice">Start learning</a>
+    <div class="header-inner">
+      <a class="brand" href="#home" aria-label="MathForge home">
+        <span class="brand-mark">∑</span>
+        <span>MathForge</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="#learn">Learn</a>
+        <a href="#practice">Practice</a>
+        <a href="#solve">Solve</a>
+        <a href="#graph">Graph</a>
+        <a href="#progress">Progress</a>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-button" id="themeToggle" type="button" aria-label="Toggle light and dark theme">◐</button>
+        <a class="button button-small" href="#practice">Start learning</a>
+      </div>
     </div>
   </header>
 
@@ -260,9 +262,11 @@
   </main>
 
   <footer class="footer">
-    <a class="brand" href="#home"><span class="brand-mark">∑</span><span>MathForge</span></a>
-    <p>Built for curious minds. Static, fast, and ready for GitHub + Netlify.</p>
-    <p>© <span id="year"></span> MathForge</p>
+    <div class="footer-inner">
+      <a class="brand" href="#home"><span class="brand-mark">∑</span><span>MathForge</span></a>
+      <p>Built for curious minds. Static, fast, and ready for GitHub + Netlify.</p>
+      <p>© <span id="year"></span> MathForge</p>
+    </div>
   </footer>
 
   <dialog id="lessonDialog">
@@ -271,3 +275,4 @@
   </dialog>
 </body>
 </html>
+
