@@ -114,3 +114,8 @@ dialog{width:min(760px,calc(100% - 32px));max-height:86vh;overflow-y:auto;border
     overflow-wrap:normal;
   }
 }
+
+.tool-panel[data-panel="linear"] > p code {
+  display: inline-block;
+  white-space: nowrap;
+}
