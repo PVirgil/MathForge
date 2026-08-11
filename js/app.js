@@ -127,12 +127,23 @@
 
   // Safe-ish expression evaluator: strict whitelist + explicit function mapping.
   function normalizeExpression(expr, variable = null, value = null) {
-    let s = String(expr).toLowerCase().replace(/\s+/g, "");
+    let s = String(expr).toLowerCase()
+      .replace(/\s+/g, "")
+      .replace(/[×·]/g, "*")
+      .replace(/÷/g, "/")
+      .replace(/−/g, "-")
+      .replace(/π/g, "pi");
     if (!s || s.length > 120) throw new Error("Expression is empty or too long.");
     if (!/^[0-9a-z+\-*/^().,]+$/.test(s)) throw new Error("Unsupported character.");
     const allowedNames = ["sin","cos","tan","asin","acos","atan","sqrt","abs","log","ln","exp","floor","ceil","round","pi","e"];
     const names = s.match(/[a-z]+/g) || [];
     for (const name of names) if (name !== variable && !allowedNames.includes(name)) throw new Error(`Unsupported term: ${name}`);
+    if (variable) {
+      s = s
+        .replace(new RegExp(`(\\d|\\))${variable}\\b`, "g"), `$1*${variable}`)
+        .replace(new RegExp(`\\b${variable}(?=\\d|\\()`, "g"), `${variable}*`);
+    }
+    s = s.replace(/(\d|\))(?=(pi|e|sin|cos|tan|asin|acos|atan|sqrt|abs|log|ln|exp|floor|ceil|round)\b)/g, "$1*");
     s = s.replace(/\^/g, "**");
     const replacements = {
       "asin":"Math.asin","acos":"Math.acos","atan":"Math.atan",
