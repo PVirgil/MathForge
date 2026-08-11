@@ -7,7 +7,38 @@
 <meta name="theme-color" content="#090d18">
 <title>MathForge — Learn. Solve. Master.</title>
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="assets/styles.css">
+<style>
+:root{
+--bg:#080b14;--bg2:#0d1221;--panel:#11172a;--panel2:#151d34;--text:#f5f7ff;--muted:#9ba7c0;
+--line:rgba(255,255,255,.09);--accent:#78e0c5;--accent2:#8f9cff;--danger:#ff8e9f;--shadow:0 24px 70px rgba(0,0,0,.28);
+--radius:24px;--max:1180px}
+[data-theme="light"]{--bg:#f7f9fc;--bg2:#eef2f8;--panel:#fff;--panel2:#f3f6fb;--text:#111829;--muted:#5b6880;--line:rgba(16,24,40,.1);--shadow:0 22px 65px rgba(50,70,110,.12)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 15% 0%,rgba(143,156,255,.11),transparent 28rem),radial-gradient(circle at 85% 10%,rgba(120,224,197,.09),transparent 30rem),var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.6}
+button,input{font:inherit}button,a{-webkit-tap-highlight-color:transparent}a{color:inherit;text-decoration:none}code{padding:.15rem .4rem;border-radius:7px;background:var(--panel2);border:1px solid var(--line)}
+.skip-link{position:fixed;top:-5rem;left:1rem;z-index:100;background:var(--text);color:var(--bg);padding:.7rem 1rem;border-radius:8px}.skip-link:focus{top:1rem}
+.site-header{position:sticky;top:0;z-index:50;width:100%;background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+.header-inner{height:76px;width:min(var(--max),calc(100% - 48px));margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:inline-flex;align-items:center;gap:.68rem;font-weight:800;letter-spacing:-.03em}.brand-mark{width:34px;height:34px;display:grid;place-items:center;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#081018}
+.nav{display:flex;gap:1.75rem;color:var(--muted);font-size:.93rem}.nav a:hover{color:var(--text)}.header-actions{display:flex;align-items:center;gap:.65rem}
+.icon-button,.text-button,.quick-keys button,.tool-tab{border:0;cursor:pointer;color:inherit}.icon-button{width:38px;height:38px;border-radius:50%;background:var(--panel);border:1px solid var(--line)}
+.button{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 1.15rem;border:1px solid transparent;border-radius:12px;background:var(--accent);color:#07110f;font-weight:800;cursor:pointer;transition:transform .18s ease,filter .18s ease}.button:hover{transform:translateY(-1px);filter:brightness(1.04)}.button-small{min-height:38px;font-size:.9rem;padding:0 .95rem}.button-ghost{background:transparent;color:var(--text);border-color:var(--line)}.button-light{background:#fff;color:#101522}.full{width:100%}
+.section{width:min(var(--max),calc(100% - 48px));margin:0 auto;padding:96px 0}.hero{min-height:680px;display:grid;grid-template-columns:1.03fr .97fr;gap:72px;align-items:center;padding-top:70px}.eyebrow{color:var(--accent);text-transform:uppercase;letter-spacing:.16em;font-size:.74rem;font-weight:800;margin-bottom:1rem}
+h1,h2,h3{line-height:1.06;letter-spacing:-.045em;margin:0;font-weight:800}h1{font-size:clamp(3.5rem,7vw,6.8rem)}h2{font-size:clamp(2.35rem,4.5vw,4.4rem)}h3{font-size:1.4rem}.gradient-text{background:linear-gradient(95deg,var(--accent),var(--accent2));color:transparent;-webkit-background-clip:text;background-clip:text}.hero-lede{color:var(--muted);font-size:1.16rem;max-width:600px;margin:1.5rem 0 2rem}.hero-actions{display:flex;gap:.75rem;flex-wrap:wrap}.hero-stats{display:flex;gap:2.2rem;margin-top:3.1rem}.hero-stats div{display:grid}.hero-stats strong{font-size:1.5rem}.hero-stats span{color:var(--muted);font-size:.78rem}
+.card{background:linear-gradient(180deg,color-mix(in srgb,var(--panel) 96%,white 4%),var(--panel));border:1px solid var(--line);box-shadow:var(--shadow);border-radius:var(--radius)}.hero-panel{overflow:hidden}.window-bar{height:48px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:7px;padding:0 18px}.window-bar span{width:9px;height:9px;border-radius:50%;background:var(--muted);opacity:.45}.window-bar small{color:var(--muted);margin-left:auto}.equation-card{margin:20px;padding:32px;border-radius:18px;background:var(--bg2);border:1px solid var(--line)}.tiny-label{font-size:.68rem;letter-spacing:.15em;color:var(--muted);font-weight:800}.display-math{font-size:clamp(2rem,4vw,3.6rem);margin:1.2rem 0;text-align:center}.equation-card p{color:var(--muted);margin:0;font-size:.9rem}.mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:0 20px 20px}.mini-card{display:grid;padding:18px;border-radius:16px;background:var(--panel2);border:1px solid var(--line);transition:transform .18s}.mini-card:hover{transform:translateY(-2px)}.mini-card>span{color:var(--accent);font-size:1.25rem;font-weight:800}.mini-card small{color:var(--muted)}
+.subject-strip{width:100%;border-block:1px solid var(--line)}.subject-strip-inner{min-height:72px;width:min(var(--max),calc(100% - 48px));margin:0 auto;display:flex;align-items:center;justify-content:center;gap:clamp(1rem,3vw,3rem);color:var(--muted);font-size:.82rem;flex-wrap:wrap;padding:16px 0}
+.section-heading{display:grid;grid-template-columns:1fr minmax(260px,420px);gap:50px;align-items:end;margin-bottom:42px}.section-heading p{color:var(--muted);margin:0 0 .3rem}
+.topic-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.topic-card{min-height:220px;text-align:left;color:inherit;cursor:pointer;padding:24px;border-radius:20px;background:var(--panel);border:1px solid var(--line);display:flex;flex-direction:column;transition:transform .2s,border-color .2s,background .2s}.topic-card:hover{transform:translateY(-4px);border-color:color-mix(in srgb,var(--accent) 48%,var(--line));background:var(--panel2)}.topic-icon{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:var(--bg2);color:var(--accent);font-weight:800;margin-bottom:auto}.topic-card h3{font-size:1.15rem;margin-top:1.6rem;letter-spacing:-.025em}.topic-card p{color:var(--muted);font-size:.83rem;margin:.42rem 0 0}
+.tool-shell{padding:10px}.tool-tabs{display:flex;gap:6px;border-bottom:1px solid var(--line);padding:6px 6px 12px;overflow-x:auto}.tool-tab{background:transparent;padding:.7rem 1rem;border-radius:10px;white-space:nowrap;color:var(--muted)}.tool-tab.active{background:var(--panel2);color:var(--text)}.tool-panel{display:none;padding:42px;min-height:310px}.tool-panel.active{display:block}.tool-panel>p{color:var(--muted)}.input-row{display:grid;grid-template-columns:1fr auto;gap:10px;margin-top:26px}input{width:100%;min-height:48px;border:1px solid var(--line);border-radius:12px;background:var(--bg2);color:var(--text);padding:0 14px;outline:none}input:focus{border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 14%,transparent)}.coefficient-row{display:grid;grid-template-columns:repeat(3,1fr) auto;gap:12px;margin-top:26px;align-items:end}.coefficient-row label,.graph-controls label{color:var(--muted);font-size:.83rem}.coefficient-row input,.graph-controls input{margin-top:6px}.result-box{margin-top:18px;min-height:72px;padding:17px 19px;border-radius:14px;background:var(--bg2);border:1px solid var(--line);color:var(--muted)}.result-box strong{color:var(--text)}.quick-keys{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.quick-keys button{background:var(--panel2);border:1px solid var(--line);color:var(--muted);padding:.46rem .7rem;border-radius:9px}.quick-keys button:hover{color:var(--text)}
+.graph-layout{display:grid;grid-template-columns:310px 1fr;gap:16px}.graph-controls{padding:24px}.graph-controls>label{display:block}.range-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:18px 0}.microcopy{color:var(--muted);font-size:.8rem;margin:18px 0 0}.graph-card{padding:12px;min-width:0;overflow:hidden}#graphCanvas{width:100%;height:440px;display:block;border-radius:16px;background:var(--bg2)}
+.practice-layout{display:grid;grid-template-columns:1fr 310px;gap:16px}.practice-card{padding:34px}.practice-meta{display:flex;justify-content:space-between;color:var(--muted);font-size:.82rem}.practice-question{font-size:clamp(2rem,5vw,3.5rem);font-weight:800;margin:54px 0 30px}.practice-feedback{min-height:28px;margin-top:12px;font-weight:700}.correct{color:var(--accent)}.incorrect{color:var(--danger)}.hidden{display:none!important}.score-card{padding:28px;display:flex;flex-direction:column}.score-card strong{font-size:3rem;margin:1rem 0}.score-card p{color:var(--muted);font-size:.9rem}.progress-track{height:7px;border-radius:99px;overflow:hidden;background:var(--bg2)}.progress-track div{height:100%;width:0;background:linear-gradient(90deg,var(--accent),var(--accent2));transition:width .3s}.text-button{padding:0;margin-top:auto;background:transparent;color:var(--muted);text-align:left;text-decoration:underline}
+.dashboard-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.metric-card{padding:26px;min-height:180px;display:flex;flex-direction:column}.metric-card span,.metric-card small{color:var(--muted)}.metric-card strong{font-size:3rem;margin:auto 0 0}.progress-reset{margin-top:18px}
+.cta-section{margin-block:60px 100px;border-radius:30px;padding:58px;background:linear-gradient(120deg,#6dd6bb,#828df2);color:#09101b;display:flex;justify-content:space-between;align-items:end;gap:30px}.cta-section .eyebrow{color:#263957}.cta-section h2{max-width:850px;font-size:clamp(2rem,4vw,3.7rem)}
+.site-footer{width:100%;border-top:1px solid var(--line)}.footer-inner{min-height:150px;width:min(var(--max),calc(100% - 48px));margin:0 auto;display:grid;grid-template-columns:1fr 2fr 1fr;align-items:center;gap:20px;color:var(--muted);font-size:.82rem}.footer-inner p:last-child{text-align:right}
+dialog{width:min(760px,calc(100% - 32px));max-height:86vh;overflow-y:auto;border:1px solid var(--line);border-radius:24px;padding:34px;background:var(--panel);color:var(--text);box-shadow:var(--shadow)}dialog::backdrop{background:rgba(3,6,14,.72);backdrop-filter:blur(8px)}.dialog-close{position:sticky;top:0;float:right;width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--panel2);color:var(--text);cursor:pointer}.lesson-kicker{color:var(--accent);font-size:.75rem;text-transform:uppercase;letter-spacing:.14em;font-weight:800}#lessonContent h2{font-size:2.7rem;margin:.4rem 0 1rem}#lessonContent h3{margin:2rem 0 .7rem}#lessonContent p,#lessonContent li{color:var(--muted)}.lesson-example{padding:18px;border-left:3px solid var(--accent);background:var(--bg2);border-radius:0 12px 12px 0}.lesson-check{margin-top:18px;padding:16px;border-radius:12px;background:var(--panel2);border:1px solid var(--line)}
+@media(max-width:980px){.nav{display:none}.hero{grid-template-columns:1fr;gap:50px}.hero-panel{max-width:650px}.topic-grid,.dashboard-grid{grid-template-columns:repeat(2,1fr)}.graph-layout,.practice-layout{grid-template-columns:1fr}.score-card{min-height:260px}}
+@media(max-width:640px){.header-inner,.section,.subject-strip-inner,.footer-inner{width:min(100% - 30px,var(--max))}.header-actions .button{display:none}.section{padding:72px 0}.hero{min-height:auto;padding-top:30px}.hero-stats{gap:1.2rem}.section-heading{grid-template-columns:1fr;gap:18px}.topic-grid,.dashboard-grid{grid-template-columns:1fr}.tool-panel{padding:28px 16px}.input-row,.coefficient-row{grid-template-columns:1fr}.practice-card{padding:24px 18px}.cta-section{width:calc(100% - 30px);padding:36px 24px;flex-direction:column;align-items:flex-start}.footer-inner{grid-template-columns:1fr;padding:35px 0}.footer-inner p:last-child{text-align:left}}
+
+</style>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -58,6 +89,342 @@
 
 <footer class="site-footer"><div class="footer-inner"><a class="brand" href="#home"><span class="brand-mark">∑</span><span>MathForge</span></a><p>Built for curious minds. Static, fast, and ready for GitHub + Netlify.</p><p>© <span id="year"></span> MathForge</p></div></footer>
 <dialog id="lessonDialog"><button id="closeLesson" class="dialog-close" type="button">×</button><article id="lessonContent"></article></dialog>
-<script src="data/topics.js"></script><script src="js/core.js"></script><script src="js/app.js"></script>
-</body></html>
+<script>
+window.MATHFORGE_TOPICS = [
+  {
+    "id": "arithmetic",
+    "icon": "123",
+    "title": "Arithmetic",
+    "description": "Numbers, fractions, ratios, percentages, and powers.",
+    "level": "Foundations",
+    "intro": "Arithmetic is the language of quantity. Strong arithmetic is less about speed than recognizing useful relationships between numbers.",
+    "key": [
+      "Use order of operations consistently.",
+      "Fractions are another way to express division.",
+      "Percent means per hundred."
+    ],
+    "example": "To find 15% of 80, calculate 0.15 × 80 = 12.",
+    "checkQuestion": "What is 25% of 60?",
+    "checkAnswer": "15"
+  },
+  {
+    "id": "algebra",
+    "icon": "x",
+    "title": "Algebra",
+    "description": "Expressions, equations, inequalities, and functions.",
+    "level": "Core",
+    "intro": "Algebra uses symbols to represent unknown quantities and relationships. Solving means finding values that make a statement true.",
+    "key": [
+      "Perform the same valid operation on both sides.",
+      "Combine like terms before isolating the variable.",
+      "Check a solution by substituting it back."
+    ],
+    "example": "For 3x + 7 = 22, subtract 7 to get 3x = 15, then divide by 3: x = 5.",
+    "checkQuestion": "Solve 2x + 4 = 14.",
+    "checkAnswer": "5"
+  },
+  {
+    "id": "geometry",
+    "icon": "△",
+    "title": "Geometry",
+    "description": "Shapes, angles, area, similarity, and spatial reasoning.",
+    "level": "Core",
+    "intro": "Geometry studies size, shape, position, and spatial relationships.",
+    "key": [
+      "Triangle angles sum to 180°.",
+      "Area measures two-dimensional space.",
+      "The Pythagorean theorem applies only to right triangles."
+    ],
+    "example": "A right triangle with legs 3 and 4 has hypotenuse √(3² + 4²) = 5.",
+    "checkQuestion": "A right triangle has legs 5 and 12. Its hypotenuse?",
+    "checkAnswer": "13"
+  },
+  {
+    "id": "trigonometry",
+    "icon": "θ",
+    "title": "Trigonometry",
+    "description": "Sine, cosine, tangent, identities, and waves.",
+    "level": "Intermediate",
+    "intro": "Trigonometry connects angles to ratios of side lengths and extends naturally to periodic motion.",
+    "key": [
+      "sin θ = opposite / hypotenuse.",
+      "cos θ = adjacent / hypotenuse.",
+      "tan θ = opposite / adjacent."
+    ],
+    "example": "If opposite = 3 and hypotenuse = 5, then sin θ = 3/5 = 0.6.",
+    "checkQuestion": "If opposite = 4 and hypotenuse = 5, sin θ = ?",
+    "checkAnswer": "0.8"
+  },
+  {
+    "id": "functions",
+    "icon": "f",
+    "title": "Functions",
+    "description": "Inputs, outputs, transformations, inverses, and composition.",
+    "level": "Intermediate",
+    "intro": "A function assigns each allowed input exactly one output.",
+    "key": [
+      "Domain describes valid inputs.",
+      "Range describes possible outputs.",
+      "Graph transformations shift, stretch, compress, or reflect."
+    ],
+    "example": "If f(x) = x² + 1, then f(3) = 10.",
+    "checkQuestion": "If f(x)=2x+1, what is f(4)?",
+    "checkAnswer": "9"
+  },
+  {
+    "id": "calculus",
+    "icon": "∫",
+    "title": "Calculus",
+    "description": "Limits, derivatives, integrals, and change.",
+    "level": "Advanced",
+    "intro": "Calculus studies change and accumulation. Derivatives measure local rates; integrals measure accumulated quantity.",
+    "key": [
+      "A limit describes behavior near a value.",
+      "The derivative is an instantaneous rate of change.",
+      "An integral accumulates infinitesimal contributions."
+    ],
+    "example": "If f(x)=x³, the power rule gives f′(x)=3x².",
+    "checkQuestion": "Derivative of x²?",
+    "checkAnswer": "2x"
+  },
+  {
+    "id": "statistics",
+    "icon": "σ",
+    "title": "Statistics",
+    "description": "Data, distributions, inference, and uncertainty.",
+    "level": "Intermediate",
+    "intro": "Statistics turns data into evidence while accounting for variability and uncertainty.",
+    "key": [
+      "Mean measures one kind of center.",
+      "Median is resistant to extreme values.",
+      "Standard deviation summarizes spread."
+    ],
+    "example": "For 2, 4, 6, the mean is 4.",
+    "checkQuestion": "Mean of 3, 6, and 9?",
+    "checkAnswer": "6"
+  },
+  {
+    "id": "probability",
+    "icon": "P",
+    "title": "Probability",
+    "description": "Randomness, events, conditional probability, and expectation.",
+    "level": "Intermediate",
+    "intro": "Probability quantifies uncertainty from 0 to 1.",
+    "key": [
+      "Impossible events have probability 0.",
+      "Certain events have probability 1.",
+      "Independent events do not change one another's probabilities."
+    ],
+    "example": "For a fair six-sided die, P(rolling a 4)=1/6.",
+    "checkQuestion": "Probability of heads on a fair coin?",
+    "checkAnswer": "0.5"
+  },
+  {
+    "id": "linear-algebra",
+    "icon": "A",
+    "title": "Linear Algebra",
+    "description": "Vectors, matrices, transformations, and eigenvectors.",
+    "level": "Advanced",
+    "intro": "Linear algebra studies vector spaces and linear transformations.",
+    "key": [
+      "Vectors encode magnitude and direction.",
+      "Matrices can represent linear transformations.",
+      "The dot product combines matching vector components."
+    ],
+    "example": "(1,2)·(3,4)=11.",
+    "checkQuestion": "(2,3)·(4,5)=?",
+    "checkAnswer": "23"
+  },
+  {
+    "id": "discrete",
+    "icon": "∴",
+    "title": "Discrete Math",
+    "description": "Logic, sets, combinatorics, graphs, and proof.",
+    "level": "Advanced",
+    "intro": "Discrete mathematics studies countable structures and the logic used to reason about them.",
+    "key": [
+      "Logic formalizes valid inference.",
+      "Combinatorics counts arrangements.",
+      "Graph theory models networks."
+    ],
+    "example": "The number of ways to choose 2 items from 5 is 10.",
+    "checkQuestion": "How many ways to choose 1 item from 7?",
+    "checkAnswer": "7"
+  },
+  {
+    "id": "number-theory",
+    "icon": "ℕ",
+    "title": "Number Theory",
+    "description": "Primes, divisibility, congruences, and integer patterns.",
+    "level": "Advanced",
+    "intro": "Number theory investigates properties of integers, especially divisibility and prime structure.",
+    "key": [
+      "Prime numbers have exactly two positive divisors.",
+      "The Euclidean algorithm finds greatest common divisors.",
+      "Congruences describe remainder relationships."
+    ],
+    "example": "17 ≡ 2 (mod 5) because both leave remainder 2.",
+    "checkQuestion": "What is 14 mod 5?",
+    "checkAnswer": "4"
+  },
+  {
+    "id": "precalculus",
+    "icon": "∞",
+    "title": "Precalculus",
+    "description": "Polynomial, exponential, logarithmic, and rational models.",
+    "level": "Intermediate",
+    "intro": "Precalculus unifies algebraic and graphical ideas needed to study continuous change.",
+    "key": [
+      "Exponentials model multiplicative change.",
+      "Logarithms invert exponentials.",
+      "Polynomial end behavior depends on degree and leading term."
+    ],
+    "example": "Because 2³=8, log₂8=3.",
+    "checkQuestion": "If 10²=100, log₁₀100 = ?",
+    "checkAnswer": "2"
+  }
+];
 
+</script>
+<script>
+(function(global){
+"use strict";
+function formatNumber(n){if(!Number.isFinite(n))return String(n);if(Number.isInteger(n))return String(n);return String(Number(n.toFixed(8)))}
+function parseLinearSide(text){
+  let s=String(text).toLowerCase().replace(/\s+/g,"").replace(/\*/g,"");
+  if(!s)return {x:0,c:0};
+  if(!/^[0-9x+\-.]+$/.test(s)) throw new Error("Unsupported characters.");
+  s=s.replace(/-/g,"+-");
+  let x=0,c=0;
+  for(const term of s.split("+").filter(Boolean)){
+    if(term.includes("x")){
+      if((term.match(/x/g)||[]).length!==1 || !term.endsWith("x")) throw new Error("Use simple linear terms like 3x.");
+      let k=term.slice(0,-1);
+      if(k===""||k==="+")k="1";
+      if(k==="-")k="-1";
+      const n=Number(k);
+      if(!Number.isFinite(n)) throw new Error("Invalid x coefficient.");
+      x+=n;
+    }else{
+      const n=Number(term);
+      if(!Number.isFinite(n)) throw new Error("Invalid constant.");
+      c+=n;
+    }
+  }
+  return {x,c};
+}
+function solveLinear(eq){
+  const parts=String(eq).split("=");
+  if(parts.length!==2) throw new Error("Use exactly one equals sign.");
+  const L=parseLinearSide(parts[0]),R=parseLinearSide(parts[1]);
+  const a=L.x-R.x,b=R.c-L.c;
+  if(Math.abs(a)<1e-12)return Math.abs(b)<1e-12?{type:"infinite"}:{type:"none"};
+  return {type:"one",x:b/a,a,b};
+}
+function solveQuadratic(a,b,c){
+  a=Number(a);b=Number(b);c=Number(c);
+  if(![a,b,c].every(Number.isFinite))throw new Error("Coefficients must be numbers.");
+  if(Math.abs(a)<1e-12)throw new Error("a cannot be 0.");
+  const d=b*b-4*a*c;
+  if(d>1e-12)return{type:"two-real",d,r1:(-b+Math.sqrt(d))/(2*a),r2:(-b-Math.sqrt(d))/(2*a)};
+  if(Math.abs(d)<=1e-12)return{type:"double",d:0,r:-b/(2*a)};
+  return{type:"complex",d,real:-b/(2*a),imag:Math.sqrt(-d)/(2*Math.abs(a))};
+}
+function normalizeExpression(expr,variable,value){
+  let s=String(expr).trim().toLowerCase().replace(/[×·]/g,"*").replace(/÷/g,"/").replace(/−/g,"-").replace(/π/g,"pi");
+  if(!s||s.length>160)throw new Error("Expression is empty or too long.");
+  if(!/^[0-9a-z+\-*/^().,\s]+$/.test(s))throw new Error("Unsupported character.");
+  s=s.replace(/\s+/g,"");
+  const allowed=["sin","cos","tan","asin","acos","atan","sqrt","abs","log","ln","exp","floor","ceil","round","pi","e"];
+  const names=s.match(/[a-z]+/g)||[];
+  for(const name of names)if(name!==variable&&!allowed.includes(name))throw new Error("Unsupported term: "+name);
+  if(variable){
+    const v=variable;
+    s=s.replace(new RegExp("(\\d|\\)|pi|e)"+v,"g"),"$1*"+v);
+    s=s.replace(new RegExp(v+"(\\d|\\(|pi|e)","g"),v+"*$1");
+  }
+  s=s.replace(/\^/g,"**");
+  const repl={asin:"Math.asin",acos:"Math.acos",atan:"Math.atan",sin:"Math.sin",cos:"Math.cos",tan:"Math.tan",sqrt:"Math.sqrt",abs:"Math.abs",log:"Math.log10",ln:"Math.log",exp:"Math.exp",floor:"Math.floor",ceil:"Math.ceil",round:"Math.round"};
+  for(const [k,v] of Object.entries(repl))s=s.replace(new RegExp("\\b"+k+"\\b","g"),v);
+  s=s.replace(/\bpi\b/g,"Math.PI").replace(/\be\b/g,"Math.E");
+  if(variable)s=s.replace(new RegExp("\\b"+variable+"\\b","g"),"("+Number(value)+")");
+  return s;
+}
+function evaluate(expr,variable,value){
+  const normalized=normalizeExpression(expr,variable,value);
+  const result=Function('"use strict"; return ('+normalized+');')();
+  if(typeof result!=="number"||!Number.isFinite(result))throw new Error("Result is not a finite real number.");
+  return result;
+}
+function tutorHint(q){
+  q=String(q).toLowerCase();
+  if(/linear|solve.*x|[0-9]x/.test(q))return{title:"Isolate the variable",body:"Undo addition or subtraction first, then undo multiplication or division. Apply the same operation to both sides."};
+  if(/quadratic|x\^2|x²/.test(q))return{title:"Identify a, b, and c",body:"Try factoring when the numbers are friendly. Otherwise use the quadratic formula. The discriminant b²−4ac tells you how many real roots exist."};
+  if(/percent|%/.test(q))return{title:"Convert percent to a decimal",body:"For p% of N, calculate (p/100)×N. For percent change, divide the change by the original amount, then multiply by 100."};
+  if(/derivative|differentiat/.test(q))return{title:"Look for the function structure",body:"For x^n, use the power rule nx^(n−1). Then apply sum, product, quotient, or chain rules as needed."};
+  if(/pythag|right triangle|hypotenuse/.test(q))return{title:"Use the Pythagorean theorem",body:"For a right triangle, a²+b²=c², where c is the hypotenuse opposite the right angle."};
+  return{title:"Translate the question",body:"Write down what is known, what is unknown, and the relationship connecting them. Turn that relationship into an equation, then solve one step at a time."};
+}
+const api={formatNumber,solveLinear,solveQuadratic,normalizeExpression,evaluate,tutorHint};
+global.MathForgeCore=api;
+if(typeof module!=="undefined"&&module.exports)module.exports=api;
+})(typeof window!=="undefined"?window:globalThis);
+
+</script>
+<script>
+(function(){
+"use strict";
+const C=window.MathForgeCore,$=(s,c=document)=>c.querySelector(s),$$=(s,c=document)=>Array.from(c.querySelectorAll(s));
+const progressKey="mathforge-progress-v2";
+let progress={answered:0,correct:0,lessons:0},session={answered:0,correct:0,current:null,locked:false};
+try{progress={...progress,...JSON.parse(localStorage.getItem(progressKey)||"{}")}}catch(_){}
+function saveProgress(){try{localStorage.setItem(progressKey,JSON.stringify(progress))}catch(_){}renderProgress()}
+function renderProgress(){$("#totalAnswered").textContent=progress.answered;$("#totalCorrect").textContent=progress.correct;$("#lessonsOpened").textContent=progress.lessons;$("#accuracy").textContent=progress.answered?Math.round(progress.correct/progress.answered*100)+"%":"—"}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]))}
+
+try{const t=localStorage.getItem("mathforge-theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(_){}
+$("#themeToggle").addEventListener("click",()=>{const next=document.documentElement.dataset.theme==="light"?"dark":"light";document.documentElement.dataset.theme=next;try{localStorage.setItem("mathforge-theme",next)}catch(_){}drawGraph()});
+
+const topics=window.MATHFORGE_TOPICS||[];
+$("#topicGrid").innerHTML=topics.map(t=>`<button class="topic-card" type="button" data-topic="${esc(t.id)}"><span class="topic-icon">${esc(t.icon)}</span><h3>${esc(t.title)}</h3><p>${esc(t.description)}</p></button>`).join("");
+$$(".topic-card").forEach(card=>card.addEventListener("click",()=>{const t=topics.find(x=>x.id===card.dataset.topic);if(!t)return;$("#lessonContent").innerHTML=`<div class="lesson-kicker">${esc(t.level)} · mini lesson</div><h2>${esc(t.title)}</h2><p>${esc(t.intro)}</p><h3>Core ideas</h3><ul>${t.key.map(k=>`<li>${esc(k)}</li>`).join("")}</ul><h3>Worked example</h3><div class="lesson-example">${esc(t.example)}</div><div class="lesson-check"><strong>Quick check</strong><p>${esc(t.checkQuestion)}</p><details><summary>Show answer</summary><p>${esc(t.checkAnswer)}</p></details></div>`;$("#lessonDialog").showModal();progress.lessons++;saveProgress()}));
+$("#closeLesson").addEventListener("click",()=>$("#lessonDialog").close());
+$("#lessonDialog").addEventListener("click",e=>{if(e.target===$("#lessonDialog"))$("#lessonDialog").close()});
+
+$$(".tool-tab").forEach(tab=>tab.addEventListener("click",()=>{$$(".tool-tab").forEach(x=>x.classList.toggle("active",x===tab));$$(".tool-panel").forEach(p=>p.classList.toggle("active",p.dataset.panel===tab.dataset.tool))}));
+
+$("#linearForm").addEventListener("submit",e=>{e.preventDefault();const out=$("#linearResult");try{const r=C.solveLinear($("#linearInput").value);if(r.type==="one")out.innerHTML=`<strong>x = ${C.formatNumber(r.x)}</strong><br>Collect variable terms on one side: ${C.formatNumber(r.a)}x = ${C.formatNumber(r.b)}. Then divide by ${C.formatNumber(r.a)}.`;else if(r.type==="infinite")out.innerHTML="<strong>Infinitely many solutions.</strong><br>Both sides simplify to the same expression.";else out.innerHTML="<strong>No solution.</strong><br>The variable terms cancel but the constants disagree."}catch(err){out.textContent=err.message}});
+$("#quadraticForm").addEventListener("submit",e=>{e.preventDefault();const out=$("#quadraticResult");try{const r=C.solveQuadratic($("#qa").value,$("#qb").value,$("#qc").value);if(r.type==="two-real")out.innerHTML=`<strong>x = ${C.formatNumber(r.r1)} or x = ${C.formatNumber(r.r2)}</strong><br>Discriminant = ${C.formatNumber(r.d)} > 0, so there are two real roots.`;else if(r.type==="double")out.innerHTML=`<strong>x = ${C.formatNumber(r.r)}</strong><br>The discriminant is 0, so there is one repeated real root.`;else out.innerHTML=`<strong>x = ${C.formatNumber(r.real)} ± ${C.formatNumber(r.imag)}i</strong><br>The discriminant is ${C.formatNumber(r.d)}, so the roots are complex.`}catch(err){out.textContent=err.message}});
+$("#calcForm").addEventListener("submit",e=>{e.preventDefault();const out=$("#calcResult");try{out.innerHTML=`<strong>${C.formatNumber(C.evaluate($("#calcInput").value))}</strong>`}catch(err){out.textContent="Could not calculate: "+err.message}});
+$$("[data-calc]").forEach(b=>b.addEventListener("click",()=>{$("#calcInput").value=b.dataset.calc;$("#calcForm").requestSubmit()}));
+$("#tutorForm").addEventListener("submit",e=>{e.preventDefault();const q=$("#tutorInput").value.trim(),out=$("#tutorResult");if(!q){out.textContent="Type a question first.";return}const h=C.tutorHint(q);out.innerHTML=`<strong>${esc(h.title)}</strong><br>${esc(h.body)}`});
+
+const canvas=$("#graphCanvas"),ctx=canvas.getContext("2d");
+function niceStep(range){const rough=range/10,p=10**Math.floor(Math.log10(rough)),n=rough/p;return(n<2?1:n<5?2:5)*p}
+function cssVar(name){return getComputedStyle(document.documentElement).getPropertyValue(name).trim()}
+function drawGraph(){
+ const xmin=Number($("#xMin").value),xmax=Number($("#xMax").value),ymin=Number($("#yMin").value),ymax=Number($("#yMax").value),expr=$("#graphExpression").value,msg=$("#graphMessage");
+ if(!(xmin<xmax&&ymin<ymax)){msg.textContent="Each minimum must be smaller than its maximum.";return}
+ const rect=canvas.getBoundingClientRect(),dpr=Math.min(window.devicePixelRatio||1,2),W=Math.max(500,Math.round(rect.width*dpr)),H=Math.max(360,Math.round(440*dpr));canvas.width=W;canvas.height=H;
+ ctx.fillStyle=cssVar("--bg2");ctx.fillRect(0,0,W,H);const tx=x=>(x-xmin)/(xmax-xmin)*W,ty=y=>H-(y-ymin)/(ymax-ymin)*H;
+ ctx.strokeStyle=cssVar("--line");ctx.lineWidth=dpr;const xs=niceStep(xmax-xmin),ys=niceStep(ymax-ymin);
+ for(let x=Math.ceil(xmin/xs)*xs;x<=xmax;x+=xs){const px=tx(x);ctx.beginPath();ctx.moveTo(px,0);ctx.lineTo(px,H);ctx.stroke()}
+ for(let y=Math.ceil(ymin/ys)*ys;y<=ymax;y+=ys){const py=ty(y);ctx.beginPath();ctx.moveTo(0,py);ctx.lineTo(W,py);ctx.stroke()}
+ ctx.strokeStyle=cssVar("--muted");ctx.lineWidth=1.4*dpr;if(xmin<=0&&xmax>=0){const px=tx(0);ctx.beginPath();ctx.moveTo(px,0);ctx.lineTo(px,H);ctx.stroke()}if(ymin<=0&&ymax>=0){const py=ty(0);ctx.beginPath();ctx.moveTo(0,py);ctx.lineTo(W,py);ctx.stroke()}
+ ctx.strokeStyle=cssVar("--accent");ctx.lineWidth=2.5*dpr;ctx.beginPath();let valid=0,started=false,last=null;
+ for(let px=0;px<=W;px+=Math.max(1,dpr)){const x=xmin+px/W*(xmax-xmin);let y;try{y=C.evaluate(expr,"x",x)}catch(_){started=false;last=null;continue}const py=ty(y);if(!Number.isFinite(py)||py<-H*4||py>H*5||(last!==null&&Math.abs(py-last)>H*.65)){started=false;last=null;continue}if(!started){ctx.moveTo(px,py);started=true}else ctx.lineTo(px,py);last=py;valid++}
+ ctx.stroke();msg.innerHTML=valid?`Plotting <code>y = ${esc(expr)}</code>`:"No visible real values in this range."
+}
+$("#plotButton").addEventListener("click",drawGraph);$$("[data-graph]").forEach(b=>b.addEventListener("click",()=>{$("#graphExpression").value=b.dataset.graph;drawGraph()}));let rt;window.addEventListener("resize",()=>{clearTimeout(rt);rt=setTimeout(drawGraph,120)});
+
+function rand(a,b){return Math.floor(Math.random()*(b-a+1))+a}
+function newQuestion(){const kind=rand(0,3);let text,answer,topic,tolerance=1e-9;if(kind===0){const a=rand(3,18),b=rand(2,18);text=`${a} × ${b} = ?`;answer=a*b;topic="Arithmetic"}else if(kind===1){const x=rand(-9,12),a=rand(2,9),b=rand(-12,12),c=a*x+b;text=`${a}x ${b>=0?"+":"−"} ${Math.abs(b)} = ${c}`;answer=x;topic="Linear equations"}else if(kind===2){const base=rand(2,20)*10,p=[10,20,25,50][rand(0,3)];text=`${p}% of ${base} = ?`;answer=p/100*base;topic="Percentages"}else{const a=rand(3,15),b=rand(3,15);text=`√(${a*a} + ${b*b}) ≈ ?`;answer=Math.sqrt(a*a+b*b);topic="Geometry · round to 2 decimals";tolerance=.011}session.current={answer,tolerance};session.locked=false;$("#practiceTopic").textContent=topic;$("#questionCount").textContent=`Question ${session.answered+1}`;$("#practiceQuestion").textContent=text;$("#practiceAnswer").value="";$("#practiceAnswer").disabled=false;$("#practiceFeedback").textContent="";$("#practiceFeedback").className="practice-feedback";$("#nextQuestion").classList.add("hidden")}
+function updateSession(){$("#scoreValue").textContent=`${session.correct} / ${session.answered}`;$("#scoreBar").style.width=session.answered?`${session.correct/session.answered*100}%`:"0%"}
+$("#practiceForm").addEventListener("submit",e=>{e.preventDefault();if(session.locked)return;const value=Number($("#practiceAnswer").value);if(!Number.isFinite(value)){$("#practiceFeedback").textContent="Enter a numeric answer.";return}const right=Math.abs(value-session.current.answer)<=session.current.tolerance;session.answered++;progress.answered++;if(right){session.correct++;progress.correct++}session.locked=true;$("#practiceAnswer").disabled=true;$("#practiceFeedback").className="practice-feedback "+(right?"correct":"incorrect");$("#practiceFeedback").textContent=right?"Correct — nice work.":`Not quite. The answer is ${C.formatNumber(session.current.answer)}.`;$("#nextQuestion").classList.remove("hidden");updateSession();saveProgress()});
+$("#nextQuestion").addEventListener("click",newQuestion);$("#resetPractice").addEventListener("click",()=>{session={answered:0,correct:0,current:null,locked:false};updateSession();newQuestion()});$("#resetAllProgress").addEventListener("click",()=>{progress={answered:0,correct:0,lessons:0};saveProgress()});
+$("#year").textContent=new Date().getFullYear();renderProgress();updateSession();newQuestion();setTimeout(drawGraph,60);
+})();
+
+</script>
+<noscript><div style="padding:1rem;text-align:center">MathForge requires JavaScript to run.</div></noscript>
+</body></html>
