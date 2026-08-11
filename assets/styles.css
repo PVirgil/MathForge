@@ -28,46 +28,73 @@ dialog{width:min(760px,calc(100% - 32px));max-height:86vh;overflow-y:auto;border
 @media(max-width:980px){.nav{display:none}.hero{grid-template-columns:1fr;gap:50px}.hero-panel{max-width:650px}.topic-grid,.dashboard-grid{grid-template-columns:repeat(2,1fr)}.graph-layout,.practice-layout{grid-template-columns:1fr}.score-card{min-height:260px}}
 @media(max-width:640px){.header-inner,.section,.subject-strip-inner,.footer-inner{width:min(100% - 30px,var(--max))}.header-actions .button{display:none}.section{padding:72px 0}.hero{min-height:auto;padding-top:30px}.hero-stats{gap:1.2rem}.section-heading{grid-template-columns:1fr;gap:18px}.topic-grid,.dashboard-grid{grid-template-columns:1fr}.tool-panel{padding:28px 16px}.input-row,.coefficient-row{grid-template-columns:1fr}.practice-card{padding:24px 18px}.cta-section{width:calc(100% - 30px);padding:36px 24px;flex-direction:column;align-items:flex-start}.footer-inner{grid-template-columns:1fr;padding:35px 0}.footer-inner p:last-child{text-align:left}}
 @media(max-width:640px){
-  .header-inner,.section,.subject-strip-inner,.footer-inner{
-    width:min(100% - 30px,var(--max))
-  }
 
-  .header-actions .button{display:none}
-  .section{padding:72px 0}
-  .hero{min-height:auto;padding-top:30px}
-  .hero-stats{gap:1.2rem}
-  .section-heading{grid-template-columns:1fr;gap:18px}
-  .topic-grid,.dashboard-grid{grid-template-columns:1fr}
-  .tool-panel{padding:28px 16px}
-  .input-row,.coefficient-row{grid-template-columns:1fr}
-  .practice-card{padding:24px 18px}
-  .cta-section{
-    width:calc(100% - 30px);
-    padding:36px 24px;
-    flex-direction:column;
-    align-items:flex-start
-  }
-  .footer-inner{grid-template-columns:1fr;padding:35px 0}
-  .footer-inner p:last-child{text-align:left}
+  /* =========================================
+     FIX 1: lesson close button — JUST THE ×
+     ========================================= */
+  #closeLesson{
+    position:sticky;
+    top:0;
 
+    width:auto;
+    height:auto;
+    min-width:0;
+    min-height:0;
 
-  /* MOBILE FIX: lesson close X */
-  .dialog-close{
-    background:transparent;
-    border:0;
-    border-radius:0;
-    box-shadow:none;
-    outline:none;
-    -webkit-tap-highlight-color:transparent;
+    padding:0 4px;
+    margin:0;
+
+    border:none !important;
+    border-radius:0 !important;
+    background:none !important;
+    background-color:transparent !important;
+    box-shadow:none !important;
+
+    color:var(--text);
+    font-size:32px;
+    line-height:1;
+    font-weight:300;
+
     appearance:none;
+    -webkit-appearance:none;
+    -webkit-tap-highlight-color:transparent;
+
+    outline:none !important;
+  }
+
+  #closeLesson:hover,
+  #closeLesson:focus,
+  #closeLesson:focus-visible,
+  #closeLesson:active{
+    border:none !important;
+    background:none !important;
+    background-color:transparent !important;
+    box-shadow:none !important;
+    outline:none !important;
   }
 
 
-  /* MOBILE FIX: don't split boxed equations */
-  code{
+  /* =========================================
+     FIX 2: inline equation boxes
+     Keep the ENTIRE equation together
+     ========================================= */
+
+  .tool-panel p code,
+  #graphMessage code{
     display:inline-block;
-    white-space:nowrap;
-    max-width:100%;
-    vertical-align:baseline;
+    white-space:nowrap !important;
+    word-break:keep-all !important;
+    overflow-wrap:normal !important;
+    width:max-content;
+    max-width:none;
+  }
+
+  /* Let the sentence containing it wrap */
+  .tool-panel > p,
+  #graphMessage{
+    white-space:normal;
+    overflow:visible;
+    word-break:normal;
+    overflow-wrap:normal;
   }
 }
